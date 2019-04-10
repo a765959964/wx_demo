@@ -1,0 +1,74 @@
+<!--pages/cond/cond.wxml-->
+<view wx:if="{{isLoading}}">
+<text>Loading ''''</text>
+</view>
+<!-- <view wx:elif=""></view> -->
+
+<view wx:else>
+  <text>Loading done</text>
+</view>
+
+<!-- 对于频繁需要切换的显示的元素，不应该使用wx:if  -->
+<view hidden="{{!isLoading}}">
+<text>Loading ''''</text>
+</view>
+<!-- <view wx:elif=""></view> -->
+
+<view hidden="{{isLoading}}">
+  <text>Loading done</text>
+</view>
+
+<view>
+  <block hidden="{{isLoading}}">
+    <text>hello</text>
+    <text>word</text>
+  </block>
+   <text>show</text>
+</view>
+
+
+<!-- 循环列表  -->
+<!-- 
+<view>
+  <view wx:for="{{stuList}}" wx:for-item="stu" wx:key="{{id}}">
+    <text>id:{{index}}</text>
+    <text>name:{{stu.name}}</text>
+  </view>
+</view> 
+-->
+
+
+<view>
+  <view wx:for="{{stuList}}"  wx:key="{{id}}">
+    <text>id:{{index}}</text>
+    <text>name:{{item.name}}</text>
+  </view>
+</view>
+
+
+
+<!--  事件处理 -->
+<!-- 通过catchtap 不会有冒泡 -->
+<view bindtap='viewBindHandle'>
+  <button catchtap='bindHandle'>Click Me</button>
+</view>
+
+
+<!-- 可以通过data-xx 属性进行传参  -->
+<!-- <view>
+  <text>item 1</text>
+  <button bindtap='removeHandle' data-id='1'>Remove</button>
+</view>
+<view>
+  <text>item 2</text>
+  <button bindtap='removeHandle' data-id='2'>Remove</button>
+</view>
+<view>
+  <text>item 3</text>
+  <button bindtap='removeHandle' data-id='3'>Remove</button>
+</view> -->
+
+<!-- 单向数据流 -->
+
+<text>{{foo}}</text>
+<input  value='{{foo}}' bindinput='inputChangeHandle'/>

@@ -1,0 +1,4 @@
+/* pages/menu/menu.wxss */
+text{
+  color:red;
+}

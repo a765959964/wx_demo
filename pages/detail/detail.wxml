@@ -1,0 +1,40 @@
+<view class="content">
+    <view class="top">
+        <image src="{{shop.image}}" />
+    </view>
+    <view class="mid">
+        <view class="mid-top">
+            <view class="left">
+                <view class="fName"><text> {{shop.name}}</text></view>
+                <view class="fPrice"><text>¥ {{shop.price}}</text></view>
+            </view>
+            <view class="right">
+                <text >库存:{{shop.kucun}}</text>
+            </view>
+        </view>
+        <view class="mid-bottom">
+            <text>{{shop.detail}}</text>
+        </view>        
+    </view>
+    <view class="bottom">
+        <view class="kefu">
+            <view class="img">
+                <image src="/style/image/kefu.png" />
+            </view>
+            <view class="wenzi"><text >客服</text></view>
+        </view>
+        <view class="shoucang">
+            <view class="img">
+                <image src="/style/image/cell.png" />
+            </view>
+            <view class="wenzi"><text>收藏</text></view>
+        </view>
+        <view class="cart" bindtap="addCart">
+             <text>加入购物车</text>
+        </view>
+        <view class="pay">
+            <text>立即支付</text>
+        </view>
+
+    </view>
+</view>

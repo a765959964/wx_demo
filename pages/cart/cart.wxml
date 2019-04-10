@@ -1,0 +1,59 @@
+<!--pages/cart/cart.wxml-->
+<view class="content">
+    <scroll-view class="cart-list" scroll-y="{{true}}">
+        <block wx:for="{{carts}}" wx:key="{{id}}">
+            <view class="item">
+                <view class="selectAll">
+
+                    <icon wx:if="{{item.checked}}" type="success_circle" size="30" data-index="{{index}}" bindtap="selectItem" />
+                    <icon wx:else type="circle" size="30" data-index="{{index}}" bindtap="selectItem"/>
+                </view>
+                <view class="img">
+                    <image src="{{item.image}}" />
+                </view>
+                <view class="cart-name">
+                    <view class="name">
+                        <text >{{item.name}}</text>
+                    </view>
+                    <view class="price">¥{{item.price}}</view>
+                </view>
+                <view class="caozuo">
+                    <view class="del" bindtap="del">
+                        <text>X</text>
+                    </view>
+                    <view class="count">
+                        <view class="prep" data-index="{{index}}" bindtap="prep">
+                            <text>-</text>
+                        </view>
+                        <view class="num">
+                            <input type="number" value="{{item.num}}" />
+                        </view>
+                        <view class="add"  data-index="{{index}}" bindtap="add">
+                            <text >+</text>
+                        </view>
+                    </view>       
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="cart-footer">
+        <view class="left">
+            <view class="selectAll">
+                <icon wx:if="{{selected}}" type="success_circle" size="30" bindtap="selectAll"/>
+                <icon wx:else type="circle" size="30" bindtap="selectAll" />
+            </view>
+            <view class="fuhao">
+                <text>全选 ¥</text>
+            </view>
+            <view class="price">
+                <text>{{totalPrice}}</text>
+            </view>
+        </view>
+        <view class="right">
+            <view class="pay">
+                <text>立即支付</text>
+            </view>
+        </view>
+
+    </view>
+</view>

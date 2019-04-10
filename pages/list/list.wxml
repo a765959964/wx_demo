@@ -1,0 +1,32 @@
+<!-- pages/list/list.wxml -->
+<view class="content">
+    <view class="content-top">
+        <swiper class="siwper" circular="true"  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key="*this">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="content-buttom">
+        <view wx:for="{{shops}}" wx:key="{{id}}">
+            <view class="item" bindtap="getDetail" data-index="{{index}}">
+                <view class="item-left">
+                    <image src="{{item.image}}" />
+                </view>
+                <view class="item-mid">
+                    <view class="item-mid-top">
+                        <text >{{item.name}}</text>
+                    </view>
+                    <view class="item-mid-bottom">
+                        <text>¥{{item.price}} 元</text>
+                    </view>
+                </view>
+                <view class="item-right">
+                    <text>购买 </text> 
+                </view>
+            </view>
+       </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/menu/menu.wxml-->
+<!-- 数据绑定 -->
+<view><text>pages/menu/menu.wxml</text></view>
+<view><text>{{ foo }}</text></view>
+<view><text>{{ msg }}</text></view>
+
+
+<checkbox checked='{{false}}'></checkbox>
+<text>{{ foo.add(55) }}</text>
+
+<!--  wxs 标签，相当于html 的script，可以定义行内脚本  -->
+<wxs module="foo">
+    module.exports = {
+      add : function (input){
+      return input + "wxs"
+      }
+    }
+</wxs>
